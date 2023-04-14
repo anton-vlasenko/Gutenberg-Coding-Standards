@@ -7,17 +7,10 @@
  * @license https://opensource.org/licenses/MIT MIT
  */
 
-namespace GutenbergCS\GutenbergCS\Tests\CodeAnalysis;
+namespace GutenbergCS\Gutenberg\Tests\CodeAnalysis;
 
 use PHP_CodeSniffer\Tests\Standards\AbstractSniffUnitTest;
 
-/**
- * Unit test class for the GuardedFunctionAndClassNames sniff.
- *
- * @package WPCS\WordPressCodingStandards
- *
- * @since   2.2.0
- */
 final class GuardedFunctionAndClassNamesUnitTest extends AbstractSniffUnitTest {
 
 	/**
