@@ -1,6 +1,6 @@
 <?php
 /**
- * WordPress Coding Standard.
+ * Gutenberg Coding Standard.
  *
  * Bootstrap file for running the tests.
  *
@@ -9,8 +9,8 @@
  * - Load the Composer autoload file.
  * - Automatically limit the testing to the WordPressCS tests.
  *
- * @package WPCS\WordPressCodingStandards
- * @link    https://github.com/WordPress/WordPress-Coding-Standards
+ * @package gutenberg-coding-standards/gbcs
+ * @link    https://github.com/anton-vlasenko/Gutenberg-Coding-Standards
  * @license https://opensource.org/licenses/MIT MIT
  */
 
@@ -56,30 +56,3 @@ for that PHPCS install.
 
 	die( 1 );
 }
-
-/*
- * Set the PHPCS_IGNORE_TEST environment variable to ignore tests from other standards.
- */
-$gbcsStandards = array(
-	'Gutenberg' => true,
-);
-
-$allStandards   = PHP_CodeSniffer\Util\Standards::getInstalledStandards();
-$allStandards[] = 'Generic';
-
-$standardsToIgnore = array();
-foreach ( $allStandards as $standard ) {
-	if ( isset( $gbcsStandards[ $standard ] ) === true ) {
-		continue;
-	}
-
-	$standardsToIgnore[] = $standard;
-}
-
-$standardsToIgnoreString = implode( ',', $standardsToIgnore );
-
-// phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.runtime_configuration_putenv -- This is not production, but test code.
-putenv( "PHPCS_IGNORE_TESTS={$standardsToIgnoreString}" );
-
-// Clean up.
-unset( $ds, $phpcsDir, $composerPHPCSPath, $allStandards, $standardsToIgnore, $standard, $standardsToIgnoreString );

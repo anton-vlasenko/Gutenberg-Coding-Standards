@@ -1,9 +1,9 @@
 <?php
 /**
- * Unit test class for WordPress Coding Standard.
+ * Unit test class for Gutenberg Coding Standard.
  *
- * @package WPCS\WordPressCodingStandards
- * @link    https://github.com/WordPress/WordPress-Coding-Standards
+ * @package gutenberg-coding-standards/gbc
+ * @link    https://github.com/anton-vlasenko/Gutenberg-Coding-Standards
  * @license https://opensource.org/licenses/MIT MIT
  */
 

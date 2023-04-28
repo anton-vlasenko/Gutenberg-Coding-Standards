@@ -1,9 +1,9 @@
 <?php
 /**
- * WordPress Coding Standard.
+ * Gutenberg Coding Standard.
  *
- * @package WPCS\WordPressCodingStandards
- * @link    https://github.com/WordPress/WordPress-Coding-Standards
+ * @package gutenberg-coding-standards/gbcs
+ * @link    https://github.com/anton-vlasenko/Gutenberg-Coding-Standards
  * @license https://opensource.org/licenses/MIT MIT
  */
 
@@ -21,9 +21,9 @@ use PHP_CodeSniffer\Sniffs\Sniff;
  *
  * @link https://github.com/WordPress/gutenberg/blob/trunk/lib/README.md#wrap-functions-and-classes-with--function_exists-and--class_exists
  *
- * @package WPCS\WordPressCodingStandards
+ * @package gutenberg-coding-standards/gbcs
  *
- * @since   3.0.0
+ * @since   1.0.0
  */
 final class GuardedFunctionAndClassNamesSniff implements Sniff {
 	/**
