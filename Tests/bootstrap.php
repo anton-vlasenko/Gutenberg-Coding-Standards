@@ -56,31 +56,3 @@ for that PHPCS install.
 
 	die( 1 );
 }
-
-
-/*
- * Set the PHPCS_IGNORE_TEST environment variable to ignore tests from other standards.
- */
-$wpcsStandards = array(
-	'WordPress' => true,
-);
-
-$allStandards   = PHP_CodeSniffer\Util\Standards::getInstalledStandards();
-$allStandards[] = 'Generic';
-
-$standardsToIgnore = array();
-foreach ( $allStandards as $standard ) {
-	if ( isset( $wpcsStandards[ $standard ] ) === true ) {
-		continue;
-	}
-
-	$standardsToIgnore[] = $standard;
-}
-
-$standardsToIgnoreString = implode( ',', $standardsToIgnore );
-
-// phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.runtime_configuration_putenv -- This is not production, but test code.
-putenv( "PHPCS_IGNORE_TESTS={$standardsToIgnoreString}" );
-
-// Clean up.
-unset( $ds, $phpcsDir, $composerPHPCSPath, $allStandards, $standardsToIgnore, $standard, $standardsToIgnoreString );
